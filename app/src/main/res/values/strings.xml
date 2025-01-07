@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BinTest</string>
+    <string name="button_lookup">Lookup</string>
+</resources>

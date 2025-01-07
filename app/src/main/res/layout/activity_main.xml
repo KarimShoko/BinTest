@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/edit_text_bin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Введите Bin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_lookup"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_bin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_lookup"
+        />
+
+    <Button
+    android:id="@+id/button_query_history"
+    app:layout_constraintTop_toBottomOf="@id/button_lookup"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Query history"
+    />
+
+    <!-- Заголовок -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Информация о карте"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_query_history" />
+
+    <!-- Scheme -->
+    <TextView
+        android:id="@+id/tv_scheme_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Scheme:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_scheme_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_scheme_label"
+        tools:text="Visa" />
+
+    <!-- Type -->
+    <TextView
+        android:id="@+id/tv_type_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Type:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_scheme_value" />
+
+    <TextView
+        android:id="@+id/tv_type_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_type_label"
+        tools:text="Debit " />
+
+    <!-- Brand -->
+    <TextView
+        android:id="@+id/tv_brand_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Brand:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_type_value" />
+
+    <TextView
+        android:id="@+id/tv_brand_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_brand_label"
+        tools:text="Visa/Dankort" />
+
+    <!-- Country -->
+    <TextView
+        android:id="@+id/tv_country_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Country:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_brand_value" />
+
+    <TextView
+        android:id="@+id/tv_country_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_country_label"
+        tools:text="🇩🇰 Denmark" />
+
+    <TextView
+        android:id="@+id/tv_country_value_coordinates"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_country_value"
+        tools:text="Latitude:" />
+
+    <TextView
+        android:id="@+id/tv_country_value_latitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_country_value_coordinates"
+        app:layout_constraintTop_toBottomOf="@+id/tv_country_value"
+        tools:text="56" />
+
+    <TextView
+        android:id="@+id/tv_country_value_longitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_country_value_latitude"
+        app:layout_constraintTop_toBottomOf="@+id/tv_country_value"
+        tools:text="10" />
+
+
+    <!-- Bank -->
+    <TextView
+        android:id="@+id/tv_bank_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Bank:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_country_value_coordinates" />
+
+    <TextView
+        android:id="@+id/tv_bank_value_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_bank_label"
+        tools:text="Jyske Bank" />
+
+    <TextView
+        android:id="@+id/tv_bank_value_url"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_bank_value_name"
+        tools:text="www.jyskebank.dk" />
+
+    <TextView
+        android:id="@+id/tv_bank_value_phone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_bank_value_url"
+        tools:text="+4589893300" />
+
+    <TextView
+        android:id="@+id/tv_bank_value_city"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_bank_value_phone"
+        tools:text="Hjørring" />
+</androidx.constraintlayout.widget.ConstraintLayout>
