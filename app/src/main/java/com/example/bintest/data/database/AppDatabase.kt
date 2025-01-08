@@ -1,12 +1,11 @@
-package com.example.bintest.data
+package com.example.bintest.data.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.bintest.domain.CardInfo
 
-@Database(entities = [CardInfo::class], version = 1, exportSchema = false)
+@Database(entities = [CardInfoDbModel::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     companion object {
 
@@ -29,5 +28,5 @@ abstract class AppDatabase : RoomDatabase() {
         }
     }
 
-    abstract fun coinPriceInfoDao(): CardInfoDao
+    abstract fun cardInfoDao(): CardInfoDao
 }

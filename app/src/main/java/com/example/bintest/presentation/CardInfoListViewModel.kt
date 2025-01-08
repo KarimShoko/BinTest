@@ -2,12 +2,13 @@ package com.example.bintest.presentation
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import com.example.bintest.data.AppDatabase
+import com.example.bintest.data.database.AppDatabase
+import com.example.bintest.data.repository.CardRepositoryImpl
+import com.example.bintest.domain.GetCardInfoListUseCase
 
-class CardInfoListViewModel(application: Application) :AndroidViewModel(application) {
-    private val db= AppDatabase.getInstance(application).coinPriceInfoDao()
+class CardInfoListViewModel(application: Application) : AndroidViewModel(application) {
+    private val repository = CardRepositoryImpl(application)
+    private val getCardInfoListUseCase = GetCardInfoListUseCase(repository)
 
-    val cardInfoList=db.getCardInfoList()
-
-
+    val cardInfoList = getCardInfoListUseCase()
 }
