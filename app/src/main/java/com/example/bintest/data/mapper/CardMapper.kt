@@ -13,16 +13,8 @@ import com.example.bintest.domain.CardInfo
 import com.example.bintest.domain.Country
 import com.example.bintest.domain.Number
 
-//import com.example.cryptoapp.data.database.CoinInfoDbModel
-//import com.example.cryptoapp.data.network.model.CoinInfoDto
-//import com.example.cryptoapp.data.network.model.CoinInfoJsonContainerDto
-//import com.example.cryptoapp.data.network.model.CoinNamesListDto
-//import com.example.cryptoapp.domain.CoinInfo
-//import com.google.gson.Gson
 
 class CardMapper {
-    //если загружаем данные из сети и нужно положить их в БД,для этого преобразовать в объект БД
-    //и когда захотим их использовать на Presentaion слое,то нужно преобразовать в CoinInfo из domain
 
     fun mapListDbModelToListEntity(list: List<CardInfoDbModel>): List<CardInfo> {
         return list.map { mapDbModelToEntity(it) }
@@ -35,7 +27,6 @@ class CardMapper {
             scheme = dto.scheme,
             type = dto.type,
             brand = dto.brand,
-            prepaid = dto.prepaid?: "",
             country = mapCountryDtoToDbModel(dto.country),
             bank = mapBankDtoToDbModel(dto.bank),
             number = mapNumberDtoToDbModel(dto.number)
@@ -48,7 +39,6 @@ class CardMapper {
             scheme = dto.scheme,
             type = dto.type,
             brand = dto.brand,
-            prepaid = dto.prepaid,
             country = mapCountryDtoToEntity(dto.country),
             bank = mapBankDtoToDbEntity(dto.bank),
             number = mapNumberDtoToDbEntity(dto.number)
@@ -61,21 +51,15 @@ class CardMapper {
             scheme = dbModel.scheme,
             type = dbModel.type,
             brand = dbModel.brand,
-            prepaid = dbModel.prepaid,
             country = mapCountryDbModelEntity(dbModel.country),
             bank = mapBankDbModelToEntity(dbModel.bank),
             number = mapNumberDbModelToEntity(dbModel.number)
         )
     }
 
-    // Мапперы для вложенных объектов:
-
     fun mapCountryDbModelEntity(countryDbModel: CountryDbModel): Country {
         return Country(
-            numeric = countryDbModel.numeric,
-            alpha2 = countryDbModel.alpha2,
             name = countryDbModel.name,
-            emoji = countryDbModel.emoji,
             currency = countryDbModel.currency,
             longitude = countryDbModel.longitude,
             latitude = countryDbModel.latitude
@@ -98,13 +82,9 @@ class CardMapper {
         )
     }
 
-
     fun mapCountryDtoToDbModel(countryDto: CountryDto): CountryDbModel {
         return CountryDbModel(
-            numeric = countryDto.numeric,
-            alpha2 = countryDto.alpha2,
             name = countryDto.name,
-            emoji = countryDto.emoji,
             currency = countryDto.currency,
             longitude = countryDto.longitude,
             latitude = countryDto.latitude
@@ -113,10 +93,7 @@ class CardMapper {
 
     fun mapCountryDtoToEntity(countryDto: CountryDto): Country {
         return Country(
-            numeric = countryDto.numeric,
-            alpha2 = countryDto.alpha2,
             name = countryDto.name,
-            emoji = countryDto.emoji,
             currency = countryDto.currency,
             longitude = countryDto.longitude,
             latitude = countryDto.latitude
@@ -135,9 +112,9 @@ class CardMapper {
     fun mapBankDtoToDbEntity(bankDto: BankDto): Bank {
         return Bank(
             name = bankDto.name,
-            url = bankDto.url,
-            phone = bankDto.phone,
-            city = bankDto.city
+            url = bankDto.url ?: "Unkown bank url",
+            phone = bankDto.phone ?: "Unkown bank phone ",
+            city = bankDto.city ?: "Unkown bank city"
         )
     }
 

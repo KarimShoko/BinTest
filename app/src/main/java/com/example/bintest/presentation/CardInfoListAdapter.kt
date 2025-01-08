@@ -8,7 +8,6 @@ import com.example.bintest.data.network.model.CardInfoDto
 import com.example.bintest.domain.CardInfo
 
 
-
 class CardInfoListAdapter : ListAdapter<CardInfo, CardInfoViewHolder>(CardInfoDiffCallback) {
 
 
@@ -33,6 +32,7 @@ class CardInfoListAdapter : ListAdapter<CardInfo, CardInfoViewHolder>(CardInfoDi
         holder.tvBankPhone.text = cardInfo.bank.phone
         holder.tvBankUrl.text = cardInfo.bank.url
         holder.tvBankCity.text = cardInfo.bank.city
+        holder.tvCountryCurrency.text = cardInfo.country.currency
     }
 
 }

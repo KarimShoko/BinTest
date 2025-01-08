@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
 import com.example.bintest.data.database.AppDatabase
-import com.example.bintest.data.database.CardInfoDbModel
 import com.example.bintest.data.network.ApiFactory
 import com.example.bintest.domain.CardInfo
 import com.example.bintest.domain.CardRepository
@@ -20,15 +19,10 @@ class CardRepositoryImpl(application: Application) : CardRepository {
         return cardInfoDao.getCardInfoList().map { mapper.mapListDbModelToListEntity(it) }
     }
 
-//    suspend fun addCardInfo(cardInfo: CardInfoDbModel) {
-//        cardInfoDao.insertAndLimit(cardInfo)
-//    }
-
     override suspend fun loadCardInfo(binNumber: String): CardInfo {
         val cardInfoDto = apiService.getCardInfo(binNumber)
         val cardInfo = mapper.mapDtoToEntity(cardInfoDto, binNumber)
         cardInfoDao.insertAndLimit(mapper.mapDtoToDbModel(cardInfoDto, binNumber))
-//        cardInfoDao.insertCardInfo(mapper.mapDtoToDbModel(cardInfoDto, binNumber))
         return cardInfo
     }
 }

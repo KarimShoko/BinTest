@@ -2,7 +2,6 @@ package com.example.bintest.presentation
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import com.example.bintest.data.database.AppDatabase
 import com.example.bintest.data.repository.CardRepositoryImpl
 import com.example.bintest.domain.GetCardInfoListUseCase
 
