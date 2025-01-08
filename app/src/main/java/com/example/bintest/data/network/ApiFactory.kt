@@ -1,4 +1,4 @@
-package com.example.bintest.data
+package com.example.bintest.data.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

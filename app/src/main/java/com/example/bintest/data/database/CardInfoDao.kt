@@ -1,19 +1,18 @@
-package com.example.bintest.data
+package com.example.bintest.data.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.bintest.domain.CardInfo
 
 @Dao
 interface CardInfoDao {
     @Query("SELECT * FROM card_info_list ")
-    fun getCardInfoList(): LiveData<List<CardInfo>>
+    fun getCardInfoList(): LiveData<List<CardInfoDbModel>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertCardInfoList(cardInfo: CardInfo)
+    suspend fun insertCardInfo(cardInfo: CardInfoDbModel)
 
     @Query("DELETE FROM card_info_list WHERE id = (SELECT id FROM card_info_list ORDER BY id ASC LIMIT 1)")
     suspend fun deleteOldest()

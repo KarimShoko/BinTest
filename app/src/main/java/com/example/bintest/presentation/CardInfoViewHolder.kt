@@ -5,9 +5,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bintest.R
 
-//Класс, который содержит ссылки на  view элементы интерфейса
 class CardInfoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    val tvBinNumber=view.findViewById<TextView>(R.id.tv_bin_number)
+    val tvBinNumber = view.findViewById<TextView>(R.id.tv_bin_number)
     val tvScheme = view.findViewById<TextView>(R.id.tv_scheme_value)
     val tvType = view.findViewById<TextView>(R.id.tv_type_value)
     val tvBrand = view.findViewById<TextView>(R.id.tv_brand_value)

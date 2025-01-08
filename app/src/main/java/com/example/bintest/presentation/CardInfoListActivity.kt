@@ -37,8 +37,9 @@ class CardInfoListActivity : AppCompatActivity() {
     private fun setupRecyclerView() {
         val rvCardInfoList = findViewById<RecyclerView>(R.id.rv_card_info_list)//recyclerView
         cardInfoListAdapter = CardInfoListAdapter()
-        rvCardInfoList.adapter = cardInfoListAdapter//устанавливаем в RV адаптер
+        rvCardInfoList.adapter = cardInfoListAdapter
     }
+
     companion object {
 
         fun newIntent(context: Context): Intent {

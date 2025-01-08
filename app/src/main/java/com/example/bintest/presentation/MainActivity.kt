@@ -10,20 +10,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import com.example.bintest.R
-import com.example.bintest.data.ApiFactory
-import com.example.bintest.domain.CardInfo
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
-    val apiService = ApiFactory.apiService
-
     private lateinit var viewModel: MainViewModel
-
 
     private lateinit var tvSchemeValue: TextView
     private lateinit var tvBankValuePhone: TextView
@@ -45,25 +36,14 @@ class MainActivity : AppCompatActivity() {
         initView()
         buttonLookup.setOnClickListener {
             val binNumber = edBin.text.toString().replace(" ", "")
-            lifecycleScope.launch {
-                val bin = withContext(Dispatchers.IO) {
-                    apiService.getCardInfo(binNumber)
-                }
-                val cardInfo=CardInfo(binNumber= binNumber.toInt(),
-                    scheme =  bin.scheme,
-                    type =  bin.type, brand =  bin.brand,
-                    prepaid =  bin.prepaid,
-                    Country =  bin.Country,
-                    Bank =  bin.Bank,
-                    Number = bin.Number)
-                viewModel.insertCardInfo(cardInfo)
-                tvSchemeValue.text = bin.scheme
-                tvBankValuePhone.text = bin.Bank?.phone
-                Log.d("Test", bin.toString())
+            viewModel.loadCardInfo(binNumber)
+            viewModel.cardInfoItem.observe(this){
+                Log.d("Test",it.toString())
             }
+
         }
         buttonQueryHistory.setOnClickListener {
-            val intent= CardInfoListActivity.newIntent(this)
+            val intent = CardInfoListActivity.newIntent(this)
             startActivity(intent)
         }
 
@@ -75,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         tvBankValuePhone = findViewById(R.id.tv_bank_value_phone)
         edBin = findViewById(R.id.edit_text_bin)
         buttonLookup = findViewById(R.id.button_lookup)
-        buttonQueryHistory=findViewById(R.id.button_query_history)
+        buttonQueryHistory = findViewById(R.id.button_query_history)
 
     }
 
