@@ -15,7 +15,5 @@ data class CardInfoDbModel(
     @Embedded(prefix = "country_")
     val country: CountryDbModel,
     @Embedded(prefix = "bank")
-    val bank: BankDbModel,
-    @Embedded
-    val number: NumberDbModel
+    val bank: BankDbModel
 )

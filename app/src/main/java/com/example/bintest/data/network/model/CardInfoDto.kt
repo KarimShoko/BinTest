@@ -15,8 +15,5 @@ data class CardInfoDto(
     val country: CountryDto,
     @SerializedName("bank")
     @Embedded(prefix = "bank")
-    val bank: BankDto,
-    @SerializedName("number")
-    @Embedded
-    val number: NumberDto
+    val bank: BankDto
 )

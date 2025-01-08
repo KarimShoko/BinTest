@@ -3,15 +3,12 @@ package com.example.cryptoapp.data.mapper
 import com.example.bintest.data.database.BankDbModel
 import com.example.bintest.data.database.CardInfoDbModel
 import com.example.bintest.data.database.CountryDbModel
-import com.example.bintest.data.database.NumberDbModel
 import com.example.bintest.data.network.model.BankDto
 import com.example.bintest.data.network.model.CardInfoDto
 import com.example.bintest.data.network.model.CountryDto
-import com.example.bintest.data.network.model.NumberDto
 import com.example.bintest.domain.Bank
 import com.example.bintest.domain.CardInfo
 import com.example.bintest.domain.Country
-import com.example.bintest.domain.Number
 
 
 class CardMapper {
@@ -29,7 +26,6 @@ class CardMapper {
             brand = dto.brand,
             country = mapCountryDtoToDbModel(dto.country),
             bank = mapBankDtoToDbModel(dto.bank),
-            number = mapNumberDtoToDbModel(dto.number)
         )
     }
 
@@ -41,7 +37,6 @@ class CardMapper {
             brand = dto.brand,
             country = mapCountryDtoToEntity(dto.country),
             bank = mapBankDtoToDbEntity(dto.bank),
-            number = mapNumberDtoToDbEntity(dto.number)
         )
     }
 
@@ -52,8 +47,7 @@ class CardMapper {
             type = dbModel.type,
             brand = dbModel.brand,
             country = mapCountryDbModelEntity(dbModel.country),
-            bank = mapBankDbModelToEntity(dbModel.bank),
-            number = mapNumberDbModelToEntity(dbModel.number)
+            bank = mapBankDbModelToEntity(dbModel.bank)
         )
     }
 
@@ -72,13 +66,6 @@ class CardMapper {
             url = bankDbModel.url,
             phone = bankDbModel.phone,
             city = bankDbModel.city
-        )
-    }
-
-    fun mapNumberDbModelToEntity(numberDbModel: NumberDbModel?): com.example.bintest.domain.Number {
-        return Number(
-            length = numberDbModel?.length,
-            luhn = numberDbModel?.luhn
         )
     }
 
@@ -115,20 +102,6 @@ class CardMapper {
             url = bankDto.url ?: "Unkown bank url",
             phone = bankDto.phone ?: "Unkown bank phone ",
             city = bankDto.city ?: "Unkown bank city"
-        )
-    }
-
-    fun mapNumberDtoToDbModel(numberDto: NumberDto): NumberDbModel {
-        return NumberDbModel(
-            length = numberDto.length,
-            luhn = numberDto.luhn
-        )
-    }
-
-    fun mapNumberDtoToDbEntity(numberDto: NumberDto): Number {
-        return Number(
-            length = numberDto.length,
-            luhn = numberDto.luhn
         )
     }
 }
