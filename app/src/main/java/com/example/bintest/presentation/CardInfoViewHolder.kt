@@ -11,11 +11,11 @@ class CardInfoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val tvType = view.findViewById<TextView>(R.id.tv_type_value)
     val tvBrand = view.findViewById<TextView>(R.id.tv_brand_value)
     val tvCountry = view.findViewById<TextView>(R.id.tv_country_value)
-    val tvLatitude = view.findViewById<TextView>(R.id.tv_country_value_latitude)
-    val tvLongitude = view.findViewById<TextView>(R.id.tv_country_value_longitude)
+    val tvLatitude = view.findViewById<TextView>(R.id.tv_country_latitude_value)
+    val tvLongitude = view.findViewById<TextView>(R.id.tv_country_longitude_value)
     val tvBankName = view.findViewById<TextView>(R.id.tv_bank_value_name)
     val tvBankUrl = view.findViewById<TextView>(R.id.tv_bank_value_url)
     val tvBankPhone = view.findViewById<TextView>(R.id.tv_bank_value_phone)
     val tvBankCity = view.findViewById<TextView>(R.id.tv_bank_value_city)
-
+    val tvCountryCurrency = view.findViewById<TextView>(R.id.tv_country_currency_value)
 }

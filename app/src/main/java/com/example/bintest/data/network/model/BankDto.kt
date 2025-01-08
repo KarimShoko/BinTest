@@ -2,13 +2,13 @@ package com.example.bintest.data.network.model
 
 import com.google.gson.annotations.SerializedName
 
-data class BankDto (
+data class BankDto(
     @SerializedName("name")
-    val name:String,
+    val name: String,
     @SerializedName("url")
-    val url:String?=null,
+    val url: String? = null,
     @SerializedName("phone")
-    val phone:String?=null,
+    val phone: String? = null,
     @SerializedName("city")
-    val city:String?=null
+    val city: String? = null
 )

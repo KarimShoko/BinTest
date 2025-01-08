@@ -3,18 +3,12 @@ package com.example.bintest.data.network.model
 import com.google.gson.annotations.SerializedName
 
 data class CountryDto(
-    @SerializedName("numeric")
-    val numeric: Int,
-    @SerializedName("alpha2")
-    val alpha2: String,
     @SerializedName("name")
-    val name:String,
-    @SerializedName("emoji")
-    val emoji:String,
+    val name: String,
     @SerializedName("currency")
-    val currency:String,
+    val currency: String,
     @SerializedName("latitude")
-    val latitude:Int,
+    val latitude: Int,
     @SerializedName("longitude")
-    val longitude:Int
-    )
+    val longitude: Int
+)

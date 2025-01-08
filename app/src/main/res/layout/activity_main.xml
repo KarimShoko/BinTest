@@ -25,8 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter the Bin"
-            android:inputType="number"
-            />
+            android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -55,9 +54,11 @@
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_query_history" />
+        app:layout_constraintTop_toBottomOf="@id/button_query_history"
+        tools:visibility="visible" />
 
     <!-- Scheme -->
     <TextView
@@ -68,8 +69,10 @@
         android:layout_marginTop="16dp"
         android:text="Scheme:"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/tv_scheme_value"
@@ -77,9 +80,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="2dp"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_scheme_label"
-        tools:text="Visa" />
+        tools:text="Visa"
+        tools:visibility="visible" />
 
     <!-- Type -->
     <TextView
@@ -90,8 +95,10 @@
         android:layout_marginTop="16dp"
         android:text="Type:"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_scheme_value" />
+        app:layout_constraintTop_toBottomOf="@id/tv_scheme_value"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/tv_type_value"
@@ -99,9 +106,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="2dp"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_type_label"
-        tools:text="Debit " />
+        tools:text="Debit "
+        tools:visibility="visible" />
 
     <!-- Brand -->
     <TextView
@@ -112,8 +121,10 @@
         android:layout_marginTop="16dp"
         android:text="Brand:"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_type_value" />
+        app:layout_constraintTop_toBottomOf="@id/tv_type_value"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/tv_brand_value"
@@ -121,9 +132,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="2dp"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_brand_label"
-        tools:text="Visa/Dankort" />
+        tools:text="Visa/Dankort"
+        tools:visibility="visible" />
 
     <!-- Country -->
     <TextView
@@ -134,8 +147,10 @@
         android:layout_marginTop="16dp"
         android:text="Country:"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_brand_value" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_brand_value"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/tv_country_value"
@@ -143,39 +158,81 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_country_label"
-        tools:text="🇩🇰 Denmark" />
+        tools:text="🇩🇰 Denmark"
+        tools:visibility="visible" />
 
     <TextView
-        android:id="@+id/tv_country_latitude"
+        android:id="@+id/tv_country_latitude_label"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="2dp"
         android:text="Latitude:"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_country_value" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_country_value"
+        tools:visibility="visible" />
 
     <TextView
-        android:id="@+id/tv_country_value_latitude"
+        android:id="@+id/tv_country_longitude_label"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="2dp"
-        app:layout_constraintStart_toEndOf="@+id/tv_country_latitude"
-        app:layout_constraintTop_toBottomOf="@+id/tv_country_value"
-        tools:text="56" />
+        android:text="Longitude:"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_country_latitude_label"
+        tools:visibility="visible" />
 
     <TextView
-        android:id="@+id/tv_country_value_longitude"
+        android:id="@+id/tv_country_latitude_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:visibility="gone"
+
+        app:layout_constraintStart_toEndOf="@+id/tv_country_latitude_label"
+        app:layout_constraintTop_toBottomOf="@+id/tv_country_value"
+        tools:text="56"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_country_longitude_value"
         android:layout_width="11dp"
         android:layout_height="14dp"
+        android:layout_marginTop="2dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/tv_country_longitude_label"
+        app:layout_constraintTop_toBottomOf="@+id/tv_country_latitude_label"
+        tools:text="10"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_country_currency_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="2dp"
-        app:layout_constraintStart_toEndOf="@+id/tv_country_value_latitude"
-        app:layout_constraintTop_toBottomOf="@+id/tv_country_value"
-        tools:text="10" />
+        android:text="Currency:"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_country_longitude_label"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_country_currency_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@id/tv_country_currency_label"
+        app:layout_constraintTop_toBottomOf="@+id/tv_country_longitude_label"
+        tools:text="RUB"
+        tools:visibility="visible" />
 
 
     <!-- Bank -->
@@ -187,8 +244,10 @@
         android:layout_marginTop="16dp"
         android:text="Bank:"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_country_latitude" />
+        app:layout_constraintTop_toBottomOf="@id/tv_country_currency_label"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/tv_bank_value_name"
@@ -196,9 +255,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="2dp"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_bank_label"
-        tools:text="Jyske Bank" />
+        tools:text="Jyske Bank"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/tv_bank_value_url"
@@ -206,9 +267,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="2dp"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_bank_value_name"
-        tools:text="www.jyskebank.dk" />
+        tools:text="www.jyskebank.dk"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/tv_bank_value_phone"
@@ -216,9 +279,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="2dp"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_bank_value_url"
-        tools:text="+4589893300" />
+        tools:text="+4589893300"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/tv_bank_value_city"
@@ -226,7 +291,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="2dp"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_bank_value_phone"
-        tools:text="Hjørring" />
+        tools:text="Hjørring"
+        tools:visibility="visible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

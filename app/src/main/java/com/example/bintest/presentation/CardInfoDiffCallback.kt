@@ -1,7 +1,6 @@
 package com.example.bintest.presentation
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.bintest.data.network.model.CardInfoDto
 import com.example.bintest.domain.CardInfo
 
 object CardInfoDiffCallback : DiffUtil.ItemCallback<CardInfo>() {
