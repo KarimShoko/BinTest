@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">BinTest</string>
     <string name="button_lookup">Lookup</string>
+    <string name="error_invalid_bin">Error invalid name</string>
 </resources>

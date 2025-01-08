@@ -35,7 +35,7 @@ class CardMapper {
             scheme = dto.scheme,
             type = dto.type,
             brand = dto.brand,
-            prepaid = dto.prepaid,
+            prepaid = dto.prepaid?: "",
             country = mapCountryDtoToDbModel(dto.country),
             bank = mapBankDtoToDbModel(dto.bank),
             number = mapNumberDtoToDbModel(dto.number)

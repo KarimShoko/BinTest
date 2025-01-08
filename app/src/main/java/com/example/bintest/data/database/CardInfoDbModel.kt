@@ -17,7 +17,7 @@ data class CardInfoDbModel(
     @SerializedName("brand")
     val brand: String?,
     @SerializedName("prepaid")
-    val prepaid: String? = "test",
+    val prepaid: String? ,
     @SerializedName("country")
     @Embedded(prefix = "country_")
     val country: CountryDbModel,

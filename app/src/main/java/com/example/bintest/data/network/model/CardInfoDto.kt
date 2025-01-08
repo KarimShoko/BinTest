@@ -8,13 +8,13 @@ data class CardInfoDto(
 //    val id: Int=0,
  //   val binNumber: Int?,
     @SerializedName("scheme")
-    val scheme: String?,
+    val scheme: String,
     @SerializedName("type")
-    val type: String?,
+    val type: String,
     @SerializedName("brand")
-    val brand: String?,
+    val brand: String,
     @SerializedName("prepaid")
-    val prepaid: String? = "Test",
+    val prepaid: String? ,
     @SerializedName("country")
     @Embedded(prefix = "country_")
     val country: CountryDto,
