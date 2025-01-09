@@ -1,7 +1,7 @@
 package com.example.bintest.presentation
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.bintest.domain.CardInfo
+import com.example.bintest.domain.entity.CardInfo
 
 object CardInfoDiffCallback : DiffUtil.ItemCallback<CardInfo>() {
 

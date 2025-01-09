@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
 import com.example.bintest.data.database.AppDatabase
 import com.example.bintest.data.network.ApiFactory
-import com.example.bintest.domain.CardInfo
+import com.example.bintest.domain.entity.CardInfo
 import com.example.bintest.domain.CardRepository
 import com.example.cryptoapp.data.mapper.CardMapper
 

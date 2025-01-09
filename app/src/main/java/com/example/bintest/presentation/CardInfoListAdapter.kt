@@ -3,10 +3,8 @@ package com.example.bintest.presentation
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.example.bintest.R
-import com.example.bintest.data.network.model.CardInfoDto
 import com.example.bintest.databinding.CardInfoItemBinding
-import com.example.bintest.domain.CardInfo
+import com.example.bintest.domain.entity.CardInfo
 
 
 class CardInfoListAdapter : ListAdapter<CardInfo, CardInfoViewHolder>(CardInfoDiffCallback) {

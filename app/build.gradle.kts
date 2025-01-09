@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.devtools.ksp")
+    id("kotlin-kapt")
 }
 
 android {
@@ -69,6 +70,11 @@ dependencies {
 
     // Опционально: поддержка Kotlin Coroutines
     implementation("androidx.room:room-ktx:$room_version")
+
+    val dagger_version = "2.28.3"
+
+    implementation("com.google.dagger:dagger:$dagger_version")
+    kapt("com.google.dagger:dagger-compiler:$dagger_version")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

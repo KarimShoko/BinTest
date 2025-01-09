@@ -8,10 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.RecyclerView
 import com.example.bintest.R
 import com.example.bintest.databinding.ActivityCardInfoListBinding
-import com.example.bintest.databinding.ActivityMainBinding
 
 class CardInfoListActivity : AppCompatActivity() {
 
@@ -35,7 +33,7 @@ class CardInfoListActivity : AppCompatActivity() {
         setupRecyclerView()
         viewModel = ViewModelProvider(this)[CardInfoListViewModel::class.java]
         viewModel.cardInfoList.observe(this) {
-            cardInfoListAdapter.submitList(it)//устаовка нового списка в ListAdapter
+            cardInfoListAdapter.submitList(it)
         }
 
     }

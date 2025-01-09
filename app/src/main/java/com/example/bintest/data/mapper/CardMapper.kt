@@ -6,9 +6,9 @@ import com.example.bintest.data.database.CountryDbModel
 import com.example.bintest.data.network.model.BankDto
 import com.example.bintest.data.network.model.CardInfoDto
 import com.example.bintest.data.network.model.CountryDto
-import com.example.bintest.domain.Bank
-import com.example.bintest.domain.CardInfo
-import com.example.bintest.domain.Country
+import com.example.bintest.domain.entity.Bank
+import com.example.bintest.domain.entity.CardInfo
+import com.example.bintest.domain.entity.Country
 
 
 class CardMapper {

@@ -7,8 +7,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.bintest.data.repository.CardRepositoryImpl
-import com.example.bintest.domain.CardInfo
-import com.example.bintest.domain.LoadCardInfoUseCase
+import com.example.bintest.domain.entity.CardInfo
+import com.example.bintest.domain.usecases.LoadCardInfoUseCase
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 
@@ -18,11 +18,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val loadCardInfoUseCase = LoadCardInfoUseCase(repositry)
 
-    private val _errorInputBin = MutableLiveData<Boolean>()//для ошибок ввода имени
+    private val _errorInputBin = MutableLiveData<Boolean>()
     val errorInputBin: LiveData<Boolean>
         get() = _errorInputBin
 
-    private val _errorHttp = MutableLiveData<Boolean>()//для ошибок ввода имени
+    private val _errorHttp = MutableLiveData<Boolean>()
     val errorHttp: LiveData<Boolean>
         get() = _errorHttp
 

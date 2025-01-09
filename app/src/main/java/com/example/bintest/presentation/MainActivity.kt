@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                 if (isError == true) {
                     Toast.makeText(
                         this,
-                        getString(R.string.error_http_message), // Создайте строку в strings.xml
+                        getString(R.string.error_http_message),
                         Toast.LENGTH_LONG
                     ).show()
                     viewModel.resetHttpError()
@@ -116,4 +116,4 @@ class MainActivity : AppCompatActivity() {
         this.visibility = View.VISIBLE
     }
 }
-//2202 2061
+//22022061

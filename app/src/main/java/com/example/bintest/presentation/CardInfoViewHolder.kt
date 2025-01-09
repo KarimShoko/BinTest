@@ -1,11 +1,8 @@
 package com.example.bintest.presentation
 
-import android.view.View
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bintest.R
 import com.example.bintest.databinding.CardInfoItemBinding
-import com.example.bintest.domain.CardInfo
+import com.example.bintest.domain.entity.CardInfo
 
 class CardInfoViewHolder(private val binding: CardInfoItemBinding) :
     RecyclerView.ViewHolder(binding.root){

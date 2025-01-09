@@ -1,4 +1,4 @@
-package com.example.bintest.domain
+package com.example.bintest.domain.entity
 
 data class Bank(
     val name: String,
