@@ -1,13 +1,11 @@
 package com.example.bintest.presentation
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import com.example.bintest.data.repository.CardRepositoryImpl
+import androidx.lifecycle.ViewModel
 import com.example.bintest.domain.usecases.GetCardInfoListUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class CardInfoListViewModel(application: Application) : AndroidViewModel(application) {
-    private val repository = CardRepositoryImpl(application)
-    private val getCardInfoListUseCase = GetCardInfoListUseCase(repository)
-
+@HiltViewModel
+class CardInfoListViewModel @Inject constructor(private val getCardInfoListUseCase: GetCardInfoListUseCase) : ViewModel() {
     val cardInfoList = getCardInfoListUseCase()
 }

@@ -1,22 +1,19 @@
 package com.example.bintest.presentation
 
-import android.app.Application
 import android.util.Log
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.bintest.data.repository.CardRepositoryImpl
 import com.example.bintest.domain.entity.CardInfo
 import com.example.bintest.domain.usecases.LoadCardInfoUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
+import javax.inject.Inject
 
-class MainViewModel(application: Application) : AndroidViewModel(application) {
-
-    private val repositry = CardRepositoryImpl(application)
-
-    private val loadCardInfoUseCase = LoadCardInfoUseCase(repositry)
+@HiltViewModel
+class MainViewModel @Inject constructor(private val loadCardInfoUseCase: LoadCardInfoUseCase) : ViewModel() {
 
     private val _errorInputBin = MutableLiveData<Boolean>()
     val errorInputBin: LiveData<Boolean>

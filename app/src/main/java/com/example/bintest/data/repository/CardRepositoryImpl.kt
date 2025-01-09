@@ -1,19 +1,19 @@
 package com.example.bintest.data.repository
 
-import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
-import com.example.bintest.data.database.AppDatabase
-import com.example.bintest.data.network.ApiFactory
+import com.example.bintest.data.database.CardInfoDao
+import com.example.bintest.data.network.ApiService
 import com.example.bintest.domain.entity.CardInfo
 import com.example.bintest.domain.CardRepository
 import com.example.cryptoapp.data.mapper.CardMapper
+import javax.inject.Inject
 
-class CardRepositoryImpl(application: Application) : CardRepository {
-
-    private val mapper = CardMapper()
-    private val cardInfoDao = AppDatabase.getInstance(application).cardInfoDao()
-    private val apiService = ApiFactory.apiService
+class CardRepositoryImpl @Inject constructor(
+    private val mapper: CardMapper,
+    private val cardInfoDao: CardInfoDao,
+    private val apiService: ApiService,
+) : CardRepository {
 
     override fun getCardInfoList(): LiveData<List<CardInfo>> {
         return cardInfoDao.getCardInfoList().map { mapper.mapListDbModelToListEntity(it) }

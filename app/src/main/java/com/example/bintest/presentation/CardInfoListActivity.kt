@@ -4,16 +4,18 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.ViewModelProvider
 import com.example.bintest.R
 import com.example.bintest.databinding.ActivityCardInfoListBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CardInfoListActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: CardInfoListViewModel
+    private val viewModel: CardInfoListViewModel by viewModels()
     private lateinit var cardInfoListAdapter: CardInfoListAdapter
 
     private val binding by lazy {
@@ -31,7 +33,6 @@ class CardInfoListActivity : AppCompatActivity() {
             insets
         }
         setupRecyclerView()
-        viewModel = ViewModelProvider(this)[CardInfoListViewModel::class.java]
         viewModel.cardInfoList.observe(this) {
             cardInfoListAdapter.submitList(it)
         }

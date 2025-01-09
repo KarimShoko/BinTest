@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("com.google.devtools.ksp")
-    id("kotlin-kapt")
+    id("com.google.devtools.ksp") version "1.9.0-1.0.13"
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -47,7 +47,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0")
 
     // Для корутин
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
     val retrofit_version = "2.9.0"
 
@@ -71,10 +71,10 @@ dependencies {
     // Опционально: поддержка Kotlin Coroutines
     implementation("androidx.room:room-ktx:$room_version")
 
-    val dagger_version = "2.28.3"
+    val dagger_version = "2.48"
 
-    implementation("com.google.dagger:dagger:$dagger_version")
-    kapt("com.google.dagger:dagger-compiler:$dagger_version")
+    implementation("com.google.dagger:hilt-android:$dagger_version")
+    ksp("com.google.dagger:hilt-compiler:$dagger_version")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -85,3 +85,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
+
+apply(plugin = "com.google.dagger.hilt.android")
+
