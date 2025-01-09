@@ -22,6 +22,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val errorInputBin: LiveData<Boolean>
         get() = _errorInputBin
 
+    private val _errorHttp = MutableLiveData<Boolean>()//для ошибок ввода имени
+    val errorHttp: LiveData<Boolean>
+        get() = _errorHttp
+
     private val _cardInfoItem = MutableLiveData<CardInfo>()//
     val cardInfoItem: LiveData<CardInfo>
         get() = _cardInfoItem
@@ -36,7 +40,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                     _cardInfoItem.value = cardInfo
                 } catch (e: HttpException) {
                     Log.e("ViewModel", "HTTP Error: ${e.code()} - ${e.message}")
-                    _errorInputBin.value = true // Отобразить ошибку пользователю
+                    _errorHttp.value=true
                 } catch (e: Exception) {
                     Log.e("ViewModel", "Unexpected Error: ${e.message}")
                     _errorInputBin.value = true
@@ -46,11 +50,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     private fun parseBin(inputBin: String?): String {
-        //если inputText не равен null, тогда вернем этот inputName и уберем пробелы,а если равен-вернем пустую строку
         return inputBin?.replace(" ", "") ?: ""
     }
 
-    //проверка корректности данных
+
     private fun validateInput(name: String): Boolean {
         var result = true
         if (name.isBlank()) {
@@ -60,7 +63,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         return result
     }
 
-    fun resetErrorInputName() {//сброс ошибки ввода имени
+    fun resetHttpError() {
+        _errorHttp.value = false
+    }
+
+    fun resetErrorInputName() {
         _errorInputBin.value = false
     }
 }

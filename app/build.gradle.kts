@@ -34,37 +34,41 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
+
 
 dependencies {
 
     // Для ViewModel
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0")
 
-// Для корутин
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+    // Для корутин
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
 
-    val retrofit_version = "2.9.0" // Убедитесь, что это последняя версия
+    val retrofit_version = "2.9.0"
 
     // Основная библиотека Retrofit
-    implementation ("com.squareup.retrofit2:retrofit:$retrofit_version")
+    implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
 
     // Конвертер JSON (Moshi, Gson или другой)
-    implementation ("com.squareup.retrofit2:converter-gson:$retrofit_version")
+    implementation("com.squareup.retrofit2:converter-gson:$retrofit_version")
 
     // Опционально: поддержка Coroutines
-    implementation ("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2") // Для Coroutines
+    implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2") // Для Coroutines
 
-    val room_version="2.6.1"
+    val room_version = "2.6.1"
 
     // Основная библиотека Room
-    implementation ("androidx.room:room-runtime:$room_version")
+    implementation("androidx.room:room-runtime:$room_version")
 
     // Компилятор Room для KSP
-    ksp ("androidx.room:room-compiler:$room_version")
+    ksp("androidx.room:room-compiler:$room_version")
 
     // Опционально: поддержка Kotlin Coroutines
-    implementation ("androidx.room:room-ktx:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

@@ -4,18 +4,23 @@ import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bintest.R
+import com.example.bintest.databinding.CardInfoItemBinding
+import com.example.bintest.domain.CardInfo
 
-class CardInfoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    val tvBinNumber = view.findViewById<TextView>(R.id.tv_bin_number)
-    val tvScheme = view.findViewById<TextView>(R.id.tv_scheme_value)
-    val tvType = view.findViewById<TextView>(R.id.tv_type_value)
-    val tvBrand = view.findViewById<TextView>(R.id.tv_brand_value)
-    val tvCountry = view.findViewById<TextView>(R.id.tv_country_value)
-    val tvLatitude = view.findViewById<TextView>(R.id.tv_country_latitude_value)
-    val tvLongitude = view.findViewById<TextView>(R.id.tv_country_longitude_value)
-    val tvBankName = view.findViewById<TextView>(R.id.tv_bank_value_name)
-    val tvBankUrl = view.findViewById<TextView>(R.id.tv_bank_value_url)
-    val tvBankPhone = view.findViewById<TextView>(R.id.tv_bank_value_phone)
-    val tvBankCity = view.findViewById<TextView>(R.id.tv_bank_value_city)
-    val tvCountryCurrency = view.findViewById<TextView>(R.id.tv_country_currency_value)
+class CardInfoViewHolder(private val binding: CardInfoItemBinding) :
+    RecyclerView.ViewHolder(binding.root){
+    fun bind(cardInfo: CardInfo) {
+        binding.tvBinNumber.text = cardInfo.binNumber.toString()
+        binding.tvSchemeValue.text = cardInfo.scheme
+        binding.tvTypeValue.text = cardInfo.type
+        binding.tvBrandValue.text = cardInfo.brand
+        binding.tvCountryValue.text = cardInfo.country.name
+        binding.tvCountryLatitudeValue.text = cardInfo.country.latitude.toString()
+        binding.tvCountryLongitudeValue.text = cardInfo.country.longitude.toString()
+        binding.tvBankNameValue.text = cardInfo.bank.name
+        binding.tvBankUrlValue.text = cardInfo.bank.url
+        binding.tvBankPhoneValue.text = cardInfo.bank.phone
+        binding.tvBankCityValue.text = cardInfo.bank.city
+        binding.tvCountryCurrencyValue.text = cardInfo.country.currency
+    }
 }
