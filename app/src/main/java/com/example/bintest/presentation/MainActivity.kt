@@ -69,6 +69,7 @@ class MainActivity : AppCompatActivity() {
         }
         viewModel.cardInfoItem.observe(this) {
             with(binding) {
+                tvTitle.visibility=View.VISIBLE
                 tvSchemeValue.setTextAndShow(it.scheme)
                 tvTypeValue.setTextAndShow(it.type)
                 tvBrandValue.setTextAndShow(it.brand)
@@ -79,6 +80,7 @@ class MainActivity : AppCompatActivity() {
                 tvBankUrlValue.setTextAndShow(it.bank.url)
                 tvBankPhoneValue.setTextAndShow(it.bank.phone)
                 tvBankCityValue.setTextAndShow(it.bank.city)
+                tvCountryCurrencyValue.setTextAndShow(it.country.currency)
 
                 tvSchemeLabel.visibility = View.VISIBLE
                 tvTypeLabel.visibility = View.VISIBLE
@@ -88,6 +90,7 @@ class MainActivity : AppCompatActivity() {
                 tvCountryLongitudeValue.visibility = View.VISIBLE
                 tvCountryCurrencyLabel.visibility = View.VISIBLE
                 tvBankLabel.visibility = View.VISIBLE
+                tvCountryLongitudeLabel.visibility=View.VISIBLE
                 Log.d("Test", it.toString())
             }
         }
