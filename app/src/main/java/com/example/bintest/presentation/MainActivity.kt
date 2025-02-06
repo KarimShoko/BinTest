@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             }
             binding.tilBinNumber.error = message
         }
-        viewModel.errorHttp.observe(this){
+        viewModel.errorHttp.observe(this) {
             viewModel.errorHttp.observe(this) { isError ->
                 if (isError == true) {
                     Toast.makeText(
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         }
         viewModel.cardInfoItem.observe(this) {
             with(binding) {
-                tvTitle.visibility=View.VISIBLE
+                tvTitle.visibility = View.VISIBLE
                 tvSchemeValue.setTextAndShow(it.scheme)
                 tvTypeValue.setTextAndShow(it.type)
                 tvBrandValue.setTextAndShow(it.brand)
@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
                 tvCountryLongitudeValue.visibility = View.VISIBLE
                 tvCountryCurrencyLabel.visibility = View.VISIBLE
                 tvBankLabel.visibility = View.VISIBLE
-                tvCountryLongitudeLabel.visibility=View.VISIBLE
+                tvCountryLongitudeLabel.visibility = View.VISIBLE
                 Log.d("Test", it.toString())
             }
         }
