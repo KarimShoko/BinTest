@@ -5,10 +5,6 @@ import androidx.room.Room
 import com.example.bintest.data.database.AppDatabase
 import com.example.bintest.data.database.CardInfoDao
 import com.example.bintest.data.network.ApiService
-import com.example.bintest.data.repository.CardRepositoryImpl
-import com.example.bintest.domain.CardRepository
-import com.example.cryptoapp.data.mapper.CardMapper
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,11 +18,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object  DataModule {
 
-    @Provides
-    @Singleton
-    fun provideCardMapper(): CardMapper {
-        return CardMapper()
-    }
+
 
     @Provides
     @Singleton
@@ -42,13 +34,13 @@ object  DataModule {
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
         return Room.databaseBuilder(
-            context.applicationContext,
+            context,
             AppDatabase::class.java,
             "main.db"
         ).build()
     }
 
-
+    @Singleton
     @Provides
     fun provideCardInfoDao(database: AppDatabase): CardInfoDao {
         return database.cardInfoDao()
