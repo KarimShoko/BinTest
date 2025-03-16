@@ -1,4 +1,4 @@
-package com.example.bintest.data.repository
+    package com.example.bintest.data.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map

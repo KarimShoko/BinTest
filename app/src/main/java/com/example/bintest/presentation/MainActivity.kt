@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         }
         addTextChangeListeners()
         observeViewModel()
+        binding.etBin.setText("22022061")
         binding.buttonLookup.setOnClickListener {
             val binNumber = binding.etBin.text
             viewModel.loadCardInfo(binNumber.toString())
