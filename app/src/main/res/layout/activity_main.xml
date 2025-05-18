@@ -60,6 +60,19 @@
         app:layout_constraintTop_toBottomOf="@id/button_query_history"
         tools:visibility="visible" />
 
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_card_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tv_scheme_label,tv_scheme_value,tv_type_label,
+        tv_type_value,tv_brand_label,tv_brand_value,tv_country_label,tv_country_value,
+        tv_country_latitude_label,tv_country_latitude_value,tv_country_longitude_label,
+        tv_country_longitude_value,tv_country_currency_label,tv_country_currency_value,
+        tv_bank_label,tv_bank_name_value,tv_bank_url_value,tv_bank_phone_value,
+        tv_bank_city_value"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
     <!-- Scheme -->
     <TextView
         android:id="@+id/tv_scheme_label"

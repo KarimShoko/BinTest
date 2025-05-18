@@ -29,7 +29,6 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="2202 2061" />
 
-        <!-- Scheme -->
         <TextView
             android:id="@+id/tv_scheme_label"
             android:layout_width="wrap_content"
@@ -51,7 +50,6 @@
             app:layout_constraintTop_toBottomOf="@id/tv_scheme_label"
             tools:text="Visa" />
 
-        <!-- Type -->
         <TextView
             android:id="@+id/tv_type_label"
             android:layout_width="wrap_content"
@@ -73,7 +71,6 @@
             app:layout_constraintTop_toBottomOf="@id/tv_type_label"
             tools:text="Debit " />
 
-        <!-- Brand -->
         <TextView
             android:id="@+id/tv_brand_label"
             android:layout_width="wrap_content"
@@ -95,7 +92,6 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_brand_label"
             tools:text="Visa/Dankort" />
 
-        <!-- Country -->
         <TextView
             android:id="@+id/tv_country_label"
             android:layout_width="wrap_content"
@@ -158,8 +154,6 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_country_value"
             tools:text="10" />
 
-
-        <!-- Bank -->
         <TextView
             android:id="@+id/tv_bank_label"
             android:layout_width="wrap_content"

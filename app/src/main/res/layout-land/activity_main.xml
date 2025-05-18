@@ -28,7 +28,6 @@
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
-
     <Button
         android:id="@+id/button_lookup"
         android:layout_width="match_parent"
@@ -43,7 +42,6 @@
         android:text="Query history"
         app:layout_constraintTop_toBottomOf="@id/button_lookup" />
 
-    <!-- Заголовок -->
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="0dp"
@@ -60,7 +58,6 @@
         app:layout_constraintTop_toBottomOf="@id/button_query_history"
         tools:visibility="visible" />
 
-    <!-- Scheme -->
     <TextView
         android:id="@+id/tv_scheme_label"
         android:layout_width="wrap_content"
@@ -86,7 +83,7 @@
         tools:text="Visa"
         tools:visibility="visible" />
 
-    <!-- Type -->
+
     <TextView
         android:id="@+id/tv_type_label"
         android:layout_width="wrap_content"
@@ -112,7 +109,6 @@
         tools:text="Debit "
         tools:visibility="visible" />
 
-    <!-- Brand -->
     <TextView
         android:id="@+id/tv_brand_label"
         android:layout_width="wrap_content"
@@ -138,7 +134,6 @@
         tools:text="Visa/Dankort"
         tools:visibility="visible" />
 
-    <!-- Country -->
     <TextView
         android:id="@+id/tv_country_label"
         android:layout_width="wrap_content"
@@ -234,8 +229,6 @@
         tools:text="RUB"
         tools:visibility="visible" />
 
-
-    <!-- Bank -->
     <TextView
         android:id="@+id/tv_bank_label"
         android:layout_width="wrap_content"

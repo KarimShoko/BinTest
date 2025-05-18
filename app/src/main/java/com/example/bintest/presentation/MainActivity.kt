@@ -57,8 +57,8 @@ class MainActivity : AppCompatActivity() {
             binding.tilBinNumber.error = message
         }
         viewModel.errorHttp.observe(this) {
-            viewModel.errorHttp.observe(this) { isError ->
-                if (isError == true) {
+            viewModel.errorHttp.observe(this) {
+                if (it== true) {
                     Toast.makeText(
                         this,
                         getString(R.string.error_http_message),
@@ -70,29 +70,19 @@ class MainActivity : AppCompatActivity() {
         }
         viewModel.cardInfoItem.observe(this) {
             with(binding) {
-                tvTitle.visibility = View.VISIBLE
-                tvSchemeValue.setTextAndShow(it.scheme)
-                tvTypeValue.setTextAndShow(it.type)
-                tvBrandValue.setTextAndShow(it.brand)
-                tvCountryValue.setTextAndShow(it.country.name)
-                tvCountryLatitudeValue.setTextAndShow(it.country.latitude.toString())
-                tvCountryLongitudeValue.setTextAndShow(it.country.longitude.toString())
-                tvBankNameValue.setTextAndShow(it.bank.name)
-                tvBankUrlValue.setTextAndShow(it.bank.url)
-                tvBankPhoneValue.setTextAndShow(it.bank.phone)
-                tvBankCityValue.setTextAndShow(it.bank.city)
-                tvCountryCurrencyValue.setTextAndShow(it.country.currency)
-
-                tvSchemeLabel.visibility = View.VISIBLE
-                tvTypeLabel.visibility = View.VISIBLE
-                tvBrandLabel.visibility = View.VISIBLE
-                tvCountryLabel.visibility = View.VISIBLE
-                tvCountryLatitudeLabel.visibility = View.VISIBLE
-                tvCountryLongitudeValue.visibility = View.VISIBLE
-                tvCountryCurrencyLabel.visibility = View.VISIBLE
-                tvBankLabel.visibility = View.VISIBLE
-                tvCountryLongitudeLabel.visibility = View.VISIBLE
-                Log.d("Test", it.toString())
+                Log.d("Test",it.toString())
+                groupCardInfo?.visibility = View.VISIBLE
+                tvSchemeValue.text=it.scheme
+                tvTypeValue.text=it.type
+                tvBrandValue.text=it.brand
+                tvCountryValue.text=it.country.name
+                tvCountryLatitudeValue.text=it.country.latitude.toString()
+                tvCountryLongitudeValue.text=it.country.longitude.toString()
+                tvBankNameValue.text=it.bank.name
+                tvBankUrlValue.text=it.bank.url
+                tvBankPhoneValue.text=it.bank.phone
+                tvBankCityValue.text=it.bank.city
+                tvCountryCurrencyValue.text=it.country.currency
             }
         }
     }
@@ -114,11 +104,6 @@ class MainActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {
             }
         })
-    }
-
-    fun TextView.setTextAndShow(value: String?) {
-        this.text = value
-        this.visibility = View.VISIBLE
     }
 }
 //22022061

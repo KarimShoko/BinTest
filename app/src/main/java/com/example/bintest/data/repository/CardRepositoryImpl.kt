@@ -1,5 +1,6 @@
     package com.example.bintest.data.repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
 import com.example.bintest.data.database.CardInfoDao
